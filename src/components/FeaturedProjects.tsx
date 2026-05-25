@@ -96,7 +96,7 @@ export default function FeaturedProjects() {
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
                     {/* Category badge */}
                     <div className="absolute top-3 left-3 bg-white/90 text-primary text-xs font-bold px-2.5 py-1 rounded-lg">
-                      {project.category}
+                      {project.categories[0]}
                     </div>
                     {/* Year */}
                     <div className="absolute bottom-3 right-3 text-white text-xs font-semibold bg-black/40 px-2 py-1 rounded-lg">

@@ -2,12 +2,13 @@ import type { Metadata } from "next";
 import ContactPageClient from "./ContactPageClient";
 
 export const metadata: Metadata = {
-  title: "Liên hệ – GVN CNTT | Tư vấn giải pháp CNTT cho doanh nghiệp",
+  title: "Liên hệ GVN - Tư vấn giải pháp CNTT, hạ tầng mạng và bảo trì hệ thống",
   description:
-    "Liên hệ GVN để được tư vấn miễn phí về giải pháp CNTT, nhận báo giá thiết bị và dịch vụ. Đội ngũ hỗ trợ 24/7.",
+    "Liên hệ GVN để được tư vấn giải pháp CNTT, thi công hạ tầng mạng, camera, điện nhẹ, thiết bị công nghệ và dịch vụ bảo trì hệ thống cho doanh nghiệp.",
   openGraph: {
-    title: "Liên hệ – GVN CNTT",
-    description: "Liên hệ để được tư vấn miễn phí. Hỗ trợ 24/7.",
+    title: "Liên hệ GVN - Tư vấn giải pháp CNTT",
+    description:
+      "Liên hệ GVN để được tư vấn giải pháp CNTT, thi công hạ tầng mạng và bảo trì hệ thống cho doanh nghiệp.",
     type: "website",
   },
 };
