@@ -35,7 +35,7 @@ export const newsArticles: NewsArticle[] = [
     category: "An ninh vật lý",
     date: "2024-05-10",
     author: "GVN Security Team",
-    image: "https://placehold.co/800x450/1B4FBF/ffffff?text=Physical+Security+Strategy",
+    image: "/images/services/tu-van-thi-cong.jpg",
     excerpt:
       "Trong môi trường kinh doanh và xã hội hiện đại, an ninh vật lý đóng vai trò quan trọng trong việc bảo vệ con người, tài sản và hệ thống vận hành.",
     tags: ["An ninh vật lý", "Camera CCTV", "Kiểm soát ra vào", "Doanh nghiệp"],
@@ -119,7 +119,7 @@ export const newsArticles: NewsArticle[] = [
     category: "Bảo trì CNTT",
     date: "2024-04-18",
     author: "GVN Tech Team",
-    image: "https://placehold.co/800x450/0F3A8F/ffffff?text=IT+Maintenance+Service",
+    image: "/images/services/bao-tri-he-thong.jpg",
     excerpt:
       "Giải pháp bảo trì, kiểm tra và nâng cấp hệ thống CNTT giúp doanh nghiệp duy trì hoạt động ổn định, an toàn và hiệu quả.",
     tags: ["Bảo trì CNTT", "Nâng cấp hệ thống", "Server", "Mạng", "Dịch vụ"],
@@ -199,7 +199,7 @@ export const newsArticles: NewsArticle[] = [
     category: "IT Outsourcing",
     date: "2024-03-25",
     author: "GVN HR Team",
-    image: "https://placehold.co/800x450/2563EB/ffffff?text=IT+Outsourcing+Helpdesk",
+    image: "/images/services/helpdesk-it-outsourcing.jpg",
     excerpt:
       "Dịch vụ nhân sự IT onsite giúp doanh nghiệp xử lý sự cố nhanh chóng, hỗ trợ người dùng và vận hành hệ thống CNTT hằng ngày.",
     tags: ["IT Outsourcing", "Helpdesk", "Nhân sự IT", "Onsite", "Dịch vụ"],
@@ -278,7 +278,7 @@ export const newsArticles: NewsArticle[] = [
     category: "Thi công công trình",
     date: "2024-02-14",
     author: "GVN Engineering Team",
-    image: "https://placehold.co/800x450/1B4FBF/ffffff?text=Construction+Consulting",
+    image: "/images/services/cung-cap-linh-kien-cntt.jpg",
     excerpt:
       "GVN cung cấp dịch vụ tư vấn, thiết kế và thi công hệ thống mạng, camera, điện nhẹ, phòng máy và hạ tầng CNTT cho doanh nghiệp.",
     tags: ["Thi công", "Thiết kế", "Tư vấn", "Hạ tầng CNTT", "Công trình"],
