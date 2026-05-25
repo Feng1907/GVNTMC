@@ -102,6 +102,76 @@
   border-radius: 4px;
 }
 
+/* ── Animated gradient text ── */
+@keyframes gradient-flow {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+.animated-gradient-text {
+  background: linear-gradient(90deg, #fff 0%, #fbbf24 30%, #f97316 55%, #fff 100%);
+  background-size: 300%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradient-flow 4s ease infinite;
+}
+
+/* ── Shimmer sweep ── */
+@keyframes shimmer {
+  0%   { background-position: -200% 0; }
+  100% { background-position:  200% 0; }
+}
+.shimmer {
+  position: relative;
+  overflow: hidden;
+}
+.shimmer::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent 25%, rgba(255,255,255,0.18) 50%, transparent 75%);
+  background-size: 200% 100%;
+  animation: shimmer 2.5s infinite;
+  pointer-events: none;
+}
+
+/* ── Button shine sweep on hover ── */
+.btn-shine {
+  position: relative;
+  overflow: hidden;
+}
+.btn-shine::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(105deg, transparent 40%, rgba(255,255,255,0.22) 50%, transparent 60%);
+  transform: translateX(-120%);
+  transition: transform 0.55s ease;
+  pointer-events: none;
+}
+.btn-shine:hover::after {
+  transform: translateX(120%);
+}
+
+/* ── Card hover lift ── */
+.card-hover-lift {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card-hover-lift:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(27, 79, 191, 0.12);
+}
+
+/* ── Hero background pulse ── */
+@keyframes bg-pulse {
+  0%, 100% { opacity: 0.06; }
+  50%       { opacity: 0.10; }
+}
+.hero-bg-pulse {
+  animation: bg-pulse 6s ease-in-out infinite;
+}
+
 /* Custom scrollbar */
 ::-webkit-scrollbar {
   width: 6px;

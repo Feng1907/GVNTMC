@@ -60,7 +60,7 @@ export default function ServiceCard({ service, index }: Props) {
           <div className="absolute inset-0 bg-gradient-to-t from-primary/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-400" />
 
           {/* Icon badge over image */}
-          <div className={`absolute top-4 left-4 w-10 h-10 ${accent.light} rounded-xl flex items-center justify-center shadow-sm`}>
+          <div className={`absolute top-4 left-4 w-10 h-10 ${accent.light} rounded-xl flex items-center justify-center shadow-sm transition-transform duration-300 group-hover:rotate-3 group-hover:scale-110`}>
             <Icon className={`w-5 h-5 ${accent.icon}`} />
           </div>
         </div>
@@ -68,7 +68,7 @@ export default function ServiceCard({ service, index }: Props) {
         {/* Content */}
         <div className="flex flex-col flex-1 p-6">
           {/* Top accent bar */}
-          <div className={`w-10 h-1 ${accent.bar} rounded-full mb-4`} />
+          <div className={`w-10 h-1 bg-gradient-to-r ${accent.bar} to-transparent rounded-full mb-4`} />
 
           <h2 className="font-bold text-[1.05rem] text-text-primary leading-snug mb-3 group-hover:text-primary transition-colors duration-200 line-clamp-2">
             {service.title}

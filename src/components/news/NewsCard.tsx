@@ -26,7 +26,7 @@ export default function NewsCard({ article, index }: Props) {
     >
       <Link
         href={`/tin-tuc/${article.slug}`}
-        className="group flex flex-col bg-white rounded-2xl overflow-hidden border border-neutral-border shadow-card hover:shadow-card-hover hover:-translate-y-1 transition-all duration-300 h-full"
+        className="group flex flex-col bg-white rounded-2xl overflow-hidden border border-neutral-border shadow-card hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 h-full"
       >
         {/* Image */}
         <div className="relative aspect-video overflow-hidden bg-gray-100 flex-shrink-0">

@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import { ArrowRight, CheckCircle2, Award, Users2, TrendingUp } from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
+import AnimatedCounter from "@/components/ui/AnimatedCounter";
 
 const highlights = [
   "Phân phối thiết bị CNTT chính hãng",
@@ -14,9 +15,9 @@ const highlights = [
 ];
 
 const achievements = [
-  { icon: Award, value: "10+", label: "Năm kinh nghiệm", color: "text-blue-600 bg-blue-50" },
-  { icon: Users2, value: "50+", label: "Khách hàng", color: "text-orange-500 bg-orange-50" },
-  { icon: TrendingUp, value: "200+", label: "Dự án hoàn thành", color: "text-green-600 bg-green-50" },
+  { icon: Award, to: 10, suffix: "+", label: "Năm kinh nghiệm", color: "text-blue-600 bg-blue-50" },
+  { icon: Users2, to: 50, suffix: "+", label: "Khách hàng", color: "text-orange-500 bg-orange-50" },
+  { icon: TrendingUp, to: 200, suffix: "+", label: "Dự án hoàn thành", color: "text-green-600 bg-green-50" },
 ];
 
 export default function AboutPreview() {
@@ -78,18 +79,21 @@ export default function AboutPreview() {
                 <rect x="130" y="80" width="140" height="30" rx="6" fill="white" fillOpacity="0.2" />
                 {/* Windows */}
                 {[0,1,2,3].map(col => (
-                  [0,1,2,3].map(row => (
-                    <rect
-                      key={`${col}-${row}`}
-                      x={140 + col * 32}
-                      y={115 + row * 38}
-                      width="20"
-                      height="24"
-                      rx="3"
-                      fill={Math.random() > 0.3 ? "#F97316" : "white"}
-                      fillOpacity={Math.random() > 0.3 ? "0.7" : "0.25"}
-                    />
-                  ))
+                  [0,1,2,3].map(row => {
+                    const lit = (col + row) % 3 !== 0;
+                    return (
+                      <rect
+                        key={`${col}-${row}`}
+                        x={140 + col * 32}
+                        y={115 + row * 38}
+                        width="20"
+                        height="24"
+                        rx="3"
+                        fill={lit ? "#F97316" : "white"}
+                        fillOpacity={lit ? "0.7" : "0.25"}
+                      />
+                    );
+                  })
                 ))}
                 {/* Door */}
                 <rect x="175" y="228" width="50" height="42" rx="4" fill="#F97316" fillOpacity="0.5" />
@@ -127,11 +131,11 @@ export default function AboutPreview() {
               {achievements.map((item) => {
                 const Icon = item.icon;
                 return (
-                  <div key={item.label} className="bg-white rounded-2xl shadow-card p-4 text-center">
+                  <div key={item.label} className="card-hover-lift bg-white rounded-2xl shadow-card p-4 text-center">
                     <div className={`w-10 h-10 ${item.color} rounded-xl flex items-center justify-center mx-auto mb-2`}>
                       <Icon className="w-5 h-5" />
                     </div>
-                    <p className="font-bold text-2xl text-text-primary">{item.value}</p>
+                    <AnimatedCounter to={item.to} suffix={item.suffix} className="font-bold text-2xl text-text-primary" />
                     <p className="text-xs text-text-secondary">{item.label}</p>
                   </div>
                 );

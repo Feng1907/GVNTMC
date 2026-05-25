@@ -19,7 +19,7 @@ export default function ProjectCard({ project, index }: Props) {
       viewport={{ once: true }}
       transition={{ duration: 0.45, delay: (index % 4) * 0.08 }}
     >
-      <Link href={`/du-an/${project.slug}`} className="group block card overflow-hidden h-full">
+      <Link href={`/du-an/${project.slug}`} className="group block card card-hover-lift overflow-hidden h-full">
         {/* Image */}
         <div className="relative aspect-[4/3] overflow-hidden bg-gray-100">
           <Image
@@ -35,8 +35,8 @@ export default function ProjectCard({ project, index }: Props) {
             </div>
           )}
           {/* Hover overlay */}
-          <div className="absolute inset-0 bg-primary/80 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-            <span className="flex items-center gap-2 text-white font-semibold text-sm">
+          <div className="absolute inset-0 bg-primary/75 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300">
+            <span className="flex items-center gap-2 text-white font-semibold text-sm translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
               Xem chi tiết <ArrowRight className="w-4 h-4" />
             </span>
           </div>
