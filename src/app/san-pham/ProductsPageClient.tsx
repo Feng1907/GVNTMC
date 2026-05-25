@@ -76,20 +76,59 @@ export default function ProductsPageClient() {
 
   return (
     <>
-      {/* Breadcrumb */}
-      <div className="pt-16">
-        <ProductBreadcrumb crumbs={[{ label: "Sản phẩm" }]} />
-      </div>
+      {/* Hero */}
+      <section className="relative bg-gradient-hero overflow-hidden pt-28 pb-16">
+        <div className="absolute top-0 right-0 w-96 h-96 bg-white/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3 pointer-events-none" />
+        <div className="absolute bottom-0 left-0 w-72 h-72 bg-accent/10 rounded-full blur-3xl translate-y-1/2 -translate-x-1/4 pointer-events-none" />
 
-      {/* Page header */}
-      <section className="bg-gradient-to-b from-[#EBF0FB] to-neutral-light py-8 md:py-10">
-        <div className="container-custom">
-          <h1 className="text-3xl md:text-4xl font-bold text-text-primary">Sản phẩm</h1>
-          <p className="text-text-secondary mt-2">
-            Thiết bị CNTT, linh kiện, UPS, thiết bị ngân hàng và phần mềm doanh nghiệp chính hãng.
-          </p>
+        <div className="container-custom relative z-10">
+          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-8">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              className="max-w-2xl"
+            >
+              <div className="inline-flex items-center gap-2 bg-white/10 border border-white/20 text-white/90 text-sm font-medium px-4 py-1.5 rounded-full mb-5">
+                <span className="w-2 h-2 bg-accent rounded-full animate-pulse" />
+                Thiết bị chính hãng
+              </div>
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 leading-tight">
+                Sản phẩm &amp; <span className="text-accent">Thiết bị CNTT</span>
+              </h1>
+              <p className="text-white/70 leading-relaxed text-lg">
+                Thiết bị CNTT, linh kiện, UPS, thiết bị ngân hàng và phần mềm doanh nghiệp chính hãng — bảo hành đầy đủ.
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.2 }}
+              className="flex gap-6 md:gap-8 flex-shrink-0"
+            >
+              {[
+                { value: products.length + "+", label: "Sản phẩm" },
+                { value: "10+", label: "Thương hiệu" },
+                { value: "100%", label: "Chính hãng" },
+              ].map((s, i) => (
+                <div key={i} className="text-center">
+                  <p className="text-2xl font-bold text-white">{s.value}</p>
+                  <p className="text-xs text-white/60 mt-0.5">{s.label}</p>
+                </div>
+              ))}
+            </motion.div>
+          </div>
+        </div>
+
+        <div className="absolute bottom-0 left-0 right-0">
+          <svg viewBox="0 0 1440 40" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+            <path d="M0 40L1440 40L1440 0C1440 0 1080 40 720 40C360 40 0 0 0 0L0 40Z" fill="#F8FAFC" />
+          </svg>
         </div>
       </section>
+
+      {/* Breadcrumb */}
+      <ProductBreadcrumb crumbs={[{ label: "Sản phẩm" }]} />
 
       {/* Mobile sidebar drawer */}
       <AnimatePresence>

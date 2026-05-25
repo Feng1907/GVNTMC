@@ -38,43 +38,54 @@ export default function ProjectsPageClient() {
   return (
     <>
       {/* Hero */}
-      <section className="bg-gradient-hero text-white pt-32 pb-16">
-        <div className="container-custom">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="max-w-2xl"
-          >
-            <div className="badge bg-white/10 border border-white/20 text-white mb-6">
-              Dự án tiêu biểu
-            </div>
-            <h1 className="text-3xl md:text-4xl font-bold mb-4">
-              Các dự án GVN đã triển khai
-            </h1>
-            <p className="text-white/70 text-base leading-relaxed">
-              GVN tự hào đã hoàn thành hàng chục dự án hạ tầng CNTT cho các nhà máy, văn phòng và
-              tổ chức tài chính hàng đầu tại Việt Nam.
-            </p>
-          </motion.div>
+      <section className="relative bg-gradient-hero overflow-hidden pt-28 pb-16">
+        <div className="absolute top-0 right-0 w-96 h-96 bg-white/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3 pointer-events-none" />
+        <div className="absolute bottom-0 left-0 w-72 h-72 bg-accent/10 rounded-full blur-3xl translate-y-1/2 -translate-x-1/4 pointer-events-none" />
 
-          {/* Stats */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2 }}
-            className="flex flex-wrap gap-8 mt-10"
-          >
-            {[
-              { value: "50+", label: "Dự án hoàn thành" },
-              { value: "30+", label: "Khách hàng tin tưởng" },
-              { value: "10+", label: "Năm kinh nghiệm" },
-            ].map(({ value, label }) => (
-              <div key={label}>
-                <p className="text-2xl font-bold">{value}</p>
-                <p className="text-white/60 text-sm">{label}</p>
+        <div className="container-custom relative z-10">
+          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-8">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              className="max-w-2xl"
+            >
+              <div className="inline-flex items-center gap-2 bg-white/10 border border-white/20 text-white/90 text-sm font-medium px-4 py-1.5 rounded-full mb-5">
+                <span className="w-2 h-2 bg-accent rounded-full animate-pulse" />
+                Dự án tiêu biểu
               </div>
-            ))}
-          </motion.div>
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 leading-tight">
+                Dự án GVN <span className="text-accent">đã triển khai</span>
+              </h1>
+              <p className="text-white/70 text-lg leading-relaxed">
+                GVN tự hào đã hoàn thành hàng chục dự án hạ tầng CNTT cho các nhà máy, văn phòng và
+                tổ chức tài chính hàng đầu tại Việt Nam.
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.2 }}
+              className="flex gap-6 md:gap-8 flex-shrink-0"
+            >
+              {[
+                { value: "50+", label: "Dự án hoàn thành" },
+                { value: "30+", label: "Khách hàng" },
+                { value: "10+", label: "Năm kinh nghiệm" },
+              ].map(({ value, label }) => (
+                <div key={label} className="text-center">
+                  <p className="text-2xl font-bold text-white">{value}</p>
+                  <p className="text-xs text-white/60 mt-0.5">{label}</p>
+                </div>
+              ))}
+            </motion.div>
+          </div>
+        </div>
+
+        <div className="absolute bottom-0 left-0 right-0">
+          <svg viewBox="0 0 1440 40" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+            <path d="M0 40L1440 40L1440 0C1440 0 1080 40 720 40C360 40 0 0 0 0L0 40Z" fill="#F8FAFC" />
+          </svg>
         </div>
       </section>
 
