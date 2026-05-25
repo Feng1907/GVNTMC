@@ -70,7 +70,7 @@ export const products: Product[] = [
     category: "Linh kiện máy tính",
     categoryGroup: "Sản phẩm CNTT – Công Trình",
     brand: "A4TECH",
-    image: "https://placehold.co/600x480/F8FAFC/1B4FBF?text=A4TECH+KK-3",
+    image: "/images/products/ban-phim-a4tech-kk3.jpg",
     shortDesc: "Bàn phím USB văn phòng thiết kế mỏng nhẹ, nhập liệu êm, bền bỉ cho môi trường doanh nghiệp.",
     description:
       "Bàn phím A4TECH KK-3 là lựa chọn lý tưởng cho môi trường văn phòng và doanh nghiệp. Với thiết kế chuẩn full-size, kết nối USB ổn định và phím bấm êm, sản phẩm phù hợp cho nhu cầu nhập liệu hàng ngày trong các tổ chức, văn phòng, ngân hàng.",
@@ -92,7 +92,7 @@ export const products: Product[] = [
     category: "Linh kiện máy tính",
     categoryGroup: "Sản phẩm CNTT – Công Trình",
     brand: "Logitech",
-    image: "https://placehold.co/600x480/F8FAFC/0F3A8F?text=Logitech+K120",
+    image: "/images/products/ban-phim-logitech-k120.jpg",
     shortDesc: "Bàn phím USB chuẩn văn phòng Logitech K120, layout tiêu chuẩn, hành trình phím thoải mái.",
     description:
       "Logitech K120 là bàn phím USB đáng tin cậy với thiết kế ergonomic nhẹ và chắc chắn. Với chân đế có thể điều chỉnh và phím bấm êm, K120 là giải pháp kinh tế hiệu quả cho văn phòng và triển khai số lượng lớn trong doanh nghiệp.",
@@ -113,7 +113,7 @@ export const products: Product[] = [
     category: "Linh kiện máy tính",
     categoryGroup: "Sản phẩm CNTT – Công Trình",
     brand: "ASUS",
-    image: "https://placehold.co/600x480/F8FAFC/1B4FBF?text=ASUS+B760M-AYW",
+    image: "/images/products/mainboard-asus-b760m.jpg",
     shortDesc: "Mainboard Micro-ATX socket LGA1700, chipset B760, hỗ trợ DDR4, tích hợp WiFi 6.",
     description:
       "ASUS B760M-AYW WIFI là mainboard Micro-ATX chất lượng cao dành cho nền tảng Intel Gen 12/13. Tích hợp WiFi 6 và Bluetooth 5.2, hỗ trợ DDR4 tốc độ cao, phù hợp cho xây dựng hệ thống văn phòng hiệu năng tốt và tối ưu chi phí.",
@@ -135,7 +135,7 @@ export const products: Product[] = [
     category: "Linh kiện máy tính",
     categoryGroup: "Sản phẩm CNTT – Công Trình",
     brand: "Gigabyte",
-    image: "https://placehold.co/600x480/F8FAFC/0F3A8F?text=Gigabyte+A520M-K",
+    image: "/images/products/mainboard-gigabyte-a520m.jpg",
     shortDesc: "Mainboard Micro-ATX socket AM4 chipset A520, hỗ trợ AMD Ryzen, giá hợp lý cho văn phòng.",
     description:
       "Gigabyte A520M-K V2 là mainboard Micro-ATX đáng tin cậy cho nền tảng AMD Ryzen AM4. Thiết kế tối ưu cho hệ thống văn phòng và máy trạm chi phí thấp với độ ổn định cao, phù hợp triển khai hàng loạt trong doanh nghiệp.",
@@ -157,7 +157,7 @@ export const products: Product[] = [
     category: "Linh kiện máy tính",
     categoryGroup: "Sản phẩm CNTT – Công Trình",
     brand: "Gigabyte",
-    image: "https://placehold.co/600x480/F8FAFC/1B4FBF?text=Gigabyte+B760M+DS3H",
+    image: "/images/products/mainboard-gigabyte-b760m.jpg",
     shortDesc: "Mainboard Micro-ATX Intel B760, DDR4, WiFi 6E, Bluetooth 5.2, 2.5G LAN cho hệ thống văn phòng hiện đại.",
     description:
       "Gigabyte B760M DS3H AX DDR4 là lựa chọn tối ưu cho hệ thống văn phòng Intel Gen 12/13 với kết nối không dây WiFi 6E và Bluetooth 5.2 tích hợp. Phù hợp triển khai cho nhân viên văn phòng, ngân hàng và môi trường doanh nghiệp cần kết nối linh hoạt.",
@@ -179,7 +179,7 @@ export const products: Product[] = [
     category: "Linh kiện máy tính",
     categoryGroup: "Sản phẩm CNTT – Công Trình",
     brand: "Gigabyte",
-    image: "https://placehold.co/600x480/F8FAFC/0F3A8F?text=Gigabyte+Z790+D+DDR4",
+    image: "/images/products/mainboard-gigabyte-z790.jpg",
     shortDesc: "Mainboard ATX Intel Z790 cao cấp, DDR4, PCIe 5.0, phù hợp máy trạm và workstation doanh nghiệp.",
     description:
       "Gigabyte Z790 D DDR4 là mainboard flagship cấp doanh nghiệp với chipset Intel Z790, hỗ trợ bộ nhớ DDR4 tốc độ cao và PCIe 5.0. Đây là nền tảng lý tưởng để xây dựng máy trạm workstation hiệu năng cao cho các phòng kỹ thuật, đồ họa và phát triển phần mềm.",
@@ -201,7 +201,7 @@ export const products: Product[] = [
     category: "Linh kiện máy tính",
     categoryGroup: "Sản phẩm CNTT – Công Trình",
     brand: "Corsair",
-    image: "https://placehold.co/600x480/F8FAFC/1B4FBF?text=Corsair+RS120+ARGB",
+    image: "/images/products/fan-corsair-rs120.jpg.png",
     shortDesc: "Bộ 3 quạt case 120mm ARGB tốc độ cao, kiểm soát nhiệt hiệu quả, đồng bộ ánh sáng RGB.",
     description:
       "Corsair RS120 ARGB là bộ 3 quạt case 120mm với hiệu suất tản nhiệt xuất sắc và hiệu ứng ánh sáng ARGB có thể tùy chỉnh. Phù hợp cho các hệ thống máy tính yêu cầu kiểm soát nhiệt độ tốt và thẩm mỹ hiện đại trong phòng kỹ thuật doanh nghiệp.",
@@ -223,7 +223,7 @@ export const products: Product[] = [
     category: "Linh kiện máy tính",
     categoryGroup: "Sản phẩm CNTT – Công Trình",
     brand: "Logitech",
-    image: "https://placehold.co/600x480/F8FAFC/0F3A8F?text=Logitech+MK220",
+    image: "/images/products/combo-logitech-mk295.jpg.png",
     shortDesc: "Combo bàn phím chuột không dây Logitech MK220, kết nối USB Nano, pin bền lâu, lý tưởng cho văn phòng.",
     description:
       "Logitech MK220 là bộ bàn phím và chuột không dây tiết kiệm chi phí cho văn phòng và doanh nghiệp. Với đầu thu USB Nano nhỏ gọn, kết nối ổn định lên đến 10m và pin bền lên đến 24 tháng (bàn phím), đây là giải pháp lý tưởng để triển khai số lượng lớn.",
@@ -246,7 +246,7 @@ export const products: Product[] = [
     category: "Thiết bị ngân hàng",
     categoryGroup: "Thiết Bị Chuyên Dụng Cho Ngân Hàng",
     brand: "DAVISOFT",
-    image: "https://placehold.co/600x480/F8FAFC/1B4FBF?text=DAVISOFT+Queue+Controller",
+    image: "/images/products/davisoft-queue-controller.jpg",
     shortDesc: "Bộ điều khiển hệ thống xếp hàng lấy số thứ tự chuyên dụng cho ngân hàng và dịch vụ công.",
     description:
       "Bộ điều khiển DAVISOFT là trung tâm điều hành của hệ thống máy lấy số (queue management system), được thiết kế đặc biệt cho ngân hàng, bưu điện và các điểm dịch vụ công. Hỗ trợ quản lý nhiều quầy giao dịch đồng thời, tích hợp màn hình hiển thị và âm thanh thông báo.",
@@ -261,6 +261,51 @@ export const products: Product[] = [
     tags: ["Ngân hàng", "DAVISOFT", "Xếp hàng", "Queue System", "Dịch vụ công"],
     featured: true,
   },
+  // ─── Lưu trữ ─────────────────────────────────────────────────────────────
+  {
+    id: "13",
+    slug: "synology-hdd-plus-16tb",
+    name: "Ổ cứng HDD Synology Plus Series 16TB HAT3310-16T",
+    category: "Lưu trữ",
+    categoryGroup: "Sản phẩm CNTT – Công Trình",
+    brand: "Synology",
+    image: "/images/products/hdd-synology-16tb.jpg",
+    shortDesc: "HDD 3.5\" SATA 16TB chuyên dụng cho NAS Synology, tối ưu cho môi trường hoạt động 24/7 trong doanh nghiệp.",
+    description:
+      "Synology HAT3310-16T là ổ cứng HDD 3.5\" SATA dung lượng 16TB được thiết kế đặc biệt cho hệ thống NAS Synology. Tối ưu hóa cho môi trường hoạt động liên tục 24/7, đảm bảo độ tin cậy và hiệu suất cao trong lưu trữ doanh nghiệp. Hỗ trợ công nghệ CMR cho tốc độ đọc/ghi ổn định và bền bỉ lâu dài.",
+    specs: [
+      { label: "Dung lượng", value: "16TB" },
+      { label: "Form Factor", value: "3.5\" SATA" },
+      { label: "Tốc độ quay", value: "7200 RPM" },
+      { label: "Cache", value: "512MB" },
+      { label: "Workload", value: "180TB/năm" },
+      { label: "Bảo hành", value: "5 năm" },
+    ],
+    tags: ["HDD", "Synology", "NAS", "16TB", "Lưu trữ", "24/7"],
+    featured: true,
+  },
+  {
+    id: "14",
+    slug: "synology-ssd-sat5221",
+    name: "Ổ cứng SSD Synology Enterprise Series SAT5221",
+    category: "Lưu trữ",
+    categoryGroup: "Sản phẩm CNTT – Công Trình",
+    brand: "Synology",
+    image: "/images/products/ssd-synology-sat5221.jpg",
+    shortDesc: "SSD 2.5\" SATA Enterprise dành cho NAS Synology, hiệu suất cao, độ bền vượt trội cho dữ liệu quan trọng.",
+    description:
+      "Synology SAT5221 là SSD Enterprise 2.5\" SATA được thiết kế tối ưu cho hệ thống NAS và lưu trữ doanh nghiệp của Synology. Với tốc độ đọc/ghi tuần tự vượt trội và độ bền cao, SAT5221 là giải pháp lý tưởng cho các ứng dụng yêu cầu tốc độ truy xuất nhanh và độ tin cậy cao như cơ sở dữ liệu, ảo hóa và backup.",
+    specs: [
+      { label: "Form Factor", value: "2.5\" SATA III" },
+      { label: "Đọc tuần tự", value: "Lên đến 530 MB/s" },
+      { label: "Ghi tuần tự", value: "Lên đến 500 MB/s" },
+      { label: "MTBF", value: "2,000,000 giờ" },
+      { label: "Workload", value: "4PBW" },
+      { label: "Bảo hành", value: "5 năm" },
+    ],
+    tags: ["SSD", "Synology", "Enterprise", "SATA", "Lưu trữ", "NAS"],
+    featured: false,
+  },
   // ─── UPS / Bộ lưu điện ───────────────────────────────────────────────────
   {
     id: "10",
@@ -269,7 +314,7 @@ export const products: Product[] = [
     category: "UPS / Bộ lưu điện",
     categoryGroup: "Sản phẩm CNTT – Công Trình",
     brand: "APC",
-    image: "https://placehold.co/600x480/F8FAFC/0F3A8F?text=APC+UPS+10KVA",
+    image: "/images/products/ups-apc-10kva.jpg",
     shortDesc: "UPS Online Double Conversion 10KVA dành cho trung tâm dữ liệu, server room và hệ thống quan trọng.",
     description:
       "APC Smart-UPS SRT10000XLI là UPS Online Double Conversion 10KVA/10000W chuyên dụng cho trung tâm dữ liệu, phòng máy chủ và các hệ thống CNTT quan trọng. Với công nghệ Double Conversion đảm bảo nguồn điện sạch và ổn định tuyệt đối, không phụ thuộc vào chất lượng điện lưới.",
@@ -291,7 +336,7 @@ export const products: Product[] = [
     category: "UPS / Bộ lưu điện",
     categoryGroup: "Sản phẩm CNTT – Công Trình",
     brand: "APC",
-    image: "https://placehold.co/600x480/F8FAFC/1B4FBF?text=APC+UPS+20KVA",
+    image: "/images/products/ups-apc-20kva.jpg",
     shortDesc: "UPS Online 20KVA 3-phase input/single-phase output, dành cho hạ tầng CNTT quy mô lớn.",
     description:
       "APC SRTG20KXLI là UPS Online 20KVA 3 pha vào/1 pha ra, phù hợp cho các trung tâm dữ liệu quy mô lớn, nhà máy và hệ thống CNTT phức tạp. Trang bị pin dự phòng lớn, hỗ trợ mở rộng thời gian backup với battery pack ngoài.",
@@ -313,7 +358,7 @@ export const products: Product[] = [
     category: "UPS / Bộ lưu điện",
     categoryGroup: "Sản phẩm CNTT – Công Trình",
     brand: "APC",
-    image: "https://placehold.co/600x480/F8FAFC/0F3A8F?text=APC+UPS+30KVA",
+    image: "/images/products/ups-apc-30kva.jpg",
     shortDesc: "UPS Online 3 pha 30KVA dành cho data center, nhà máy và hạ tầng CNTT quy mô doanh nghiệp lớn.",
     description:
       "APC GVSUPS30KB4HS là UPS 3 pha đầu vào/đầu ra 30KVA dành cho các ứng dụng công nghiệp và trung tâm dữ liệu quy mô lớn. Với hiệu suất cao lên đến 96%, hệ thống tản nhiệt tiên tiến và khả năng mở rộng linh hoạt, đây là giải pháp bảo vệ nguồn điện toàn diện cho nhà máy và tập đoàn lớn.",
