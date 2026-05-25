@@ -43,7 +43,7 @@ export const services: ServiceItem[] = [
       { step: 3, title: "Triển khai", desc: "Thực hiện bảo trì / nâng cấp theo kế hoạch" },
       { step: 4, title: "Kiểm tra & bàn giao", desc: "Kiểm tra chất lượng, nghiệm thu và báo cáo" },
     ],
-    image: "https://placehold.co/800x520/1B4FBF/ffffff?text=Bảo+Trì+Hệ+Thống+CNTT",
+    image: "/images/services/bao-tri-he-thong.jpg",
     featured: true,
   },
   {
@@ -76,7 +76,7 @@ export const services: ServiceItem[] = [
       { step: 3, title: "Đặt hàng & xác nhận", desc: "Xác nhận đơn hàng và tiến hành mua sắm" },
       { step: 4, title: "Giao hàng & lắp đặt", desc: "Giao hàng đúng tiến độ và hỗ trợ lắp đặt" },
     ],
-    image: "https://placehold.co/800x520/0F3A8F/ffffff?text=Cung+Cấp+Linh+Kiện+CNTT",
+    image: "/images/services/cung-cap-linh-kien-cntt.jpg",
     featured: true,
   },
   {
@@ -109,7 +109,7 @@ export const services: ServiceItem[] = [
       { step: 3, title: "Triển khai", desc: "Lắp đặt và cấu hình theo quy trình nghiêm ngặt" },
       { step: 4, title: "Vận hành & bàn giao", desc: "Đào tạo nhân viên và hỗ trợ vận hành" },
     ],
-    image: "https://placehold.co/800x520/1B4FBF/ffffff?text=Thiết+Bị+Ngân+Hàng",
+    image: "/images/services/thiet-bi-ngan-hang.jpg",
     featured: true,
   },
   {
@@ -142,7 +142,7 @@ export const services: ServiceItem[] = [
       { step: 3, title: "Onboarding", desc: "Giới thiệu nhân sự và bắt đầu làm việc" },
       { step: 4, title: "Giám sát & báo cáo", desc: "Theo dõi hiệu suất và báo cáo định kỳ" },
     ],
-    image: "https://placehold.co/800x520/0F3A8F/ffffff?text=IT+Outsourcing+Onsite",
+    image: "/images/services/helpdesk-it-outsourcing.jpg",
     featured: false,
   },
   {
@@ -175,7 +175,7 @@ export const services: ServiceItem[] = [
       { step: 3, title: "Triển khai", desc: "Cài đặt, cấu hình và kiểm thử phần mềm" },
       { step: 4, title: "Bàn giao & hỗ trợ", desc: "Đào tạo sử dụng và hỗ trợ kỹ thuật lâu dài" },
     ],
-    image: "https://placehold.co/800x520/2563EB/ffffff?text=Giải+Pháp+Phần+Mềm",
+    image: "/images/services/giai-phap-phan-mem.jpg",
     featured: false,
   },
   {
@@ -208,7 +208,7 @@ export const services: ServiceItem[] = [
       { step: 3, title: "Thi công", desc: "Triển khai thi công theo thiết kế được duyệt" },
       { step: 4, title: "Nghiệm thu & bàn giao", desc: "Kiểm tra chất lượng và bàn giao công trình" },
     ],
-    image: "https://placehold.co/800x520/0F3A8F/ffffff?text=Thi+Công+Hạ+Tầng+CNTT",
+    image: "/images/services/tu-van-thi-cong.jpg",
     featured: true,
   },
 ];

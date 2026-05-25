@@ -35,12 +35,9 @@ export const projects: Project[] = [
     categories: ["Ngân hàng", "Hệ thống điện", "Hệ thống mạng"],
     location: "TP. Hồ Chí Minh, Việt Nam",
     year: 2023,
-    image: "https://placehold.co/800x600/1B4FBF/ffffff?text=Shinhan+Bank+Branch",
+    image: "/images/projects/shinhan-bank-dien-mang.jpg",
     gallery: [
-      "https://placehold.co/800x600/1B4FBF/ffffff?text=Shinhan+Bank+Overview",
-      "https://placehold.co/800x600/0F3A8F/ffffff?text=Network+Cabling",
-      "https://placehold.co/800x600/2563EB/ffffff?text=Power+System",
-      "https://placehold.co/800x600/1B4FBF/ffffff?text=Server+Room",
+      "/images/projects/shinhan-bank-dien-mang.jpg",
     ],
     shortDesc: "Triển khai hệ thống điện, mạng và hạ tầng CNTT cho chi nhánh ngân hàng Shinhan.",
     description:
@@ -67,11 +64,9 @@ export const projects: Project[] = [
     categories: ["Nhà máy", "Hệ thống điện", "Hệ thống mạng"],
     location: "KCN Long An, Việt Nam",
     year: 2023,
-    image: "https://placehold.co/800x600/0F3A8F/ffffff?text=Comet+Vina+Factory",
+    image: "/images/projects/comet-vina-dien-mang.jpg",
     gallery: [
-      "https://placehold.co/800x600/0F3A8F/ffffff?text=Comet+Vina+Overview",
-      "https://placehold.co/800x600/1B4FBF/ffffff?text=Electrical+System",
-      "https://placehold.co/800x600/2563EB/ffffff?text=Network+Infrastructure",
+      "/images/projects/comet-vina-dien-mang.jpg",
     ],
     shortDesc: "Thi công hạ tầng điện và mạng cho khu vực nhà máy, đảm bảo vận hành ổn định.",
     description:
@@ -98,12 +93,9 @@ export const projects: Project[] = [
     categories: ["Nhà máy", "Văn phòng", "Camera CCTV", "Loa thông báo", "Hệ thống mạng"],
     location: "KCN Đồng Nai, Việt Nam",
     year: 2023,
-    image: "https://placehold.co/800x600/1B4FBF/ffffff?text=Chemtronics+Factory",
+    image: "/images/projects/chemtronics-mang-camera.jpg",
     gallery: [
-      "https://placehold.co/800x600/1B4FBF/ffffff?text=Chemtronics+Overview",
-      "https://placehold.co/800x600/0F3A8F/ffffff?text=Network+System",
-      "https://placehold.co/800x600/2563EB/ffffff?text=Camera+Install",
-      "https://placehold.co/800x600/1B4FBF/ffffff?text=PA+Speaker+System",
+      "/images/projects/chemtronics-mang-camera.jpg",
     ],
     shortDesc: "Triển khai hệ thống mạng, camera giám sát và loa thông báo cho nhà máy, văn phòng.",
     description:
@@ -131,11 +123,9 @@ export const projects: Project[] = [
     categories: ["Văn phòng", "Camera CCTV", "Loa thông báo", "Hệ thống mạng"],
     location: "TP. Hồ Chí Minh, Việt Nam",
     year: 2023,
-    image: "https://placehold.co/800x600/0F3A8F/ffffff?text=Busan+Office",
+    image: "/images/projects/busan-mang-camera.jpg",
     gallery: [
-      "https://placehold.co/800x600/0F3A8F/ffffff?text=Busan+Office+Overview",
-      "https://placehold.co/800x600/1B4FBF/ffffff?text=WiFi+Setup",
-      "https://placehold.co/800x600/2563EB/ffffff?text=Security+Cameras",
+      "/images/projects/busan-mang-camera.jpg",
     ],
     shortDesc: "Thi công hệ thống mạng, CCTV và loa thông báo cho văn phòng chi nhánh Busan.",
     description:
@@ -162,12 +152,9 @@ export const projects: Project[] = [
     categories: ["Nhà máy", "Văn phòng", "Camera CCTV", "Loa thông báo", "Hệ thống mạng"],
     location: "Đồng Nai, Việt Nam",
     year: 2022,
-    image: "https://placehold.co/800x600/2563EB/ffffff?text=Hyosung+Factory",
+    image: "/images/projects/hyosung-mang-camera.jpg",
     gallery: [
-      "https://placehold.co/800x600/2563EB/ffffff?text=Hyosung+Overview",
-      "https://placehold.co/800x600/0F3A8F/ffffff?text=NOC+Center",
-      "https://placehold.co/800x600/1B4FBF/ffffff?text=Camera+System",
-      "https://placehold.co/800x600/2563EB/ffffff?text=PA+System",
+      "/images/projects/hyosung-mang-camera.jpg",
     ],
     shortDesc: "Lắp đặt hệ thống mạng, camera và loa thông báo cho khu vực nhà máy và văn phòng Hyosung.",
     description:
@@ -194,11 +181,9 @@ export const projects: Project[] = [
     categories: ["Nhà máy", "Hệ thống điện", "Hệ thống mạng", "Loa thông báo"],
     location: "Nhà Bè, TP. Hồ Chí Minh",
     year: 2022,
-    image: "https://placehold.co/800x600/0F3A8F/ffffff?text=CJ+Cau+Tre",
+    image: "/images/projects/cj-cau-tre-mang-dien.jpg",
     gallery: [
-      "https://placehold.co/800x600/0F3A8F/ffffff?text=CJ+Cau+Tre+Overview",
-      "https://placehold.co/800x600/1B4FBF/ffffff?text=Network+Infrastructure",
-      "https://placehold.co/800x600/2563EB/ffffff?text=PA+System+Install",
+      "/images/projects/cj-cau-tre-mang-dien.jpg",
     ],
     shortDesc: "Thi công hệ thống mạng, điện nhẹ và loa thông báo cho nhà máy CJ Cầu Tre Nhà Bè.",
     description:
@@ -225,11 +210,9 @@ export const projects: Project[] = [
     categories: ["Văn phòng", "Nhà máy", "Hệ thống điện", "Hệ thống mạng"],
     location: "TP. Hồ Chí Minh, Việt Nam",
     year: 2022,
-    image: "https://placehold.co/800x600/1B4FBF/ffffff?text=CJ+Studio",
+    image: "/images/projects/cj-studio-dien-mang.jpg",
     gallery: [
-      "https://placehold.co/800x600/1B4FBF/ffffff?text=CJ+Studio+Overview",
-      "https://placehold.co/800x600/0F3A8F/ffffff?text=Electrical+System",
-      "https://placehold.co/800x600/2563EB/ffffff?text=Network+Setup",
+      "/images/projects/cj-studio-dien-mang.jpg",
     ],
     shortDesc: "Triển khai hạ tầng điện và mạng cho nhà máy, văn phòng CJ Studio.",
     description:
@@ -255,11 +238,10 @@ export const projects: Project[] = [
     categories: ["Nhà máy", "Văn phòng", "Camera CCTV", "Loa thông báo", "Hệ thống mạng"],
     location: "Long An, Việt Nam",
     year: 2021,
-    image: "https://placehold.co/800x600/0F3A8F/ffffff?text=CJ+Mill+Factory",
+    image: "/images/projects/cj-mill-mang-camera.jpg",
     gallery: [
-      "https://placehold.co/800x600/0F3A8F/ffffff?text=CJ+Mill+Overview",
-      "https://placehold.co/800x600/1B4FBF/ffffff?text=Network+System",
-      "https://placehold.co/800x600/2563EB/ffffff?text=CCTV+System",
+      "/images/projects/cj-mill-mang-camera.jpg",
+      "/images/projects/cj-mill-dien.jpg",
     ],
     shortDesc: "Lắp đặt hệ thống mạng, camera CCTV và loa thông báo cho khu vực nhà máy CJ Mill.",
     description:
@@ -284,10 +266,10 @@ export const projects: Project[] = [
     categories: ["Nhà máy", "Văn phòng", "Hệ thống điện"],
     location: "Long An, Việt Nam",
     year: 2021,
-    image: "https://placehold.co/800x600/2563EB/ffffff?text=CJ+Mill+Electrical",
+    image: "/images/projects/cj-mill-dien.jpg",
     gallery: [
-      "https://placehold.co/800x600/2563EB/ffffff?text=CJ+Mill+Electrical+Overview",
-      "https://placehold.co/800x600/1B4FBF/ffffff?text=Power+System",
+      "/images/projects/cj-mill-dien.jpg",
+      "/images/projects/cj-mill-mang-camera.jpg",
     ],
     shortDesc: "Thi công hệ thống điện cho khu vực nhà máy và văn phòng CJ Mill.",
     description:
@@ -312,10 +294,9 @@ export const projects: Project[] = [
     categories: ["Nhà máy", "Văn phòng", "Hệ thống điện"],
     location: "Long An, Việt Nam",
     year: 2021,
-    image: "https://placehold.co/800x600/1B4FBF/ffffff?text=CJ+Long+An",
+    image: "/images/projects/cj-long-an-dien.jpg",
     gallery: [
-      "https://placehold.co/800x600/1B4FBF/ffffff?text=CJ+Long+An+Overview",
-      "https://placehold.co/800x600/0F3A8F/ffffff?text=Electrical+Work",
+      "/images/projects/cj-long-an-dien.jpg",
     ],
     shortDesc: "Triển khai hệ thống điện cho nhà máy và văn phòng CJ Long An.",
     description:
@@ -340,12 +321,10 @@ export const projects: Project[] = [
     categories: ["Ngân hàng", "Hệ thống mạng", "Hệ thống điện"],
     location: "TP. Hồ Chí Minh, Việt Nam",
     year: 2022,
-    image: "https://placehold.co/800x600/0F3A8F/ffffff?text=Hana+Bank",
+    image: "/images/projects/hana-bank.jpg",
     gallery: [
-      "https://placehold.co/800x600/0F3A8F/ffffff?text=Hana+Bank+Overview",
-      "https://placehold.co/800x600/1B4FBF/ffffff?text=IT+Infrastructure",
-      "https://placehold.co/800x600/2563EB/ffffff?text=Network+Setup",
-      "https://placehold.co/800x600/0F3A8F/ffffff?text=Server+Room",
+      "/images/projects/hana-bank.jpg",
+      "/images/projects/shinhan-bank-dien-mang.jpg",
     ],
     shortDesc: "Triển khai hạ tầng CNTT và hệ thống kỹ thuật cho Hana Bank.",
     description:
