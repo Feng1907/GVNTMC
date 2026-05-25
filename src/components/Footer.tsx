@@ -18,23 +18,13 @@ export default function Footer() {
     }
   };
 
-  const quickLinks = [
-    { label: "Trang chủ", href: "/" },
-    { label: "Giới thiệu", href: "/gioi-thieu" },
-    { label: "Dịch vụ", href: "/dich-vu" },
-    { label: "Sản phẩm", href: "/san-pham" },
-    { label: "Dự án", href: "/du-an" },
-    { label: "Tin tức", href: "/tin-tuc" },
-    { label: "Liên hệ", href: "/lien-he" },
-    { label: "Báo giá", href: "/bao-gia" },
-  ];
-
-  const services = [
-    { label: "Bảo trì hệ thống CNTT", href: "/dich-vu/bao-tri-nang-cap-he-thong" },
-    { label: "IT Outsourcing", href: "/dich-vu/helpdesk-it-outsourcing" },
-    { label: "Camera an ninh", href: "/dich-vu/giai-phap-camera-may-chu-luu-tru" },
-    { label: "Thi công hạ tầng", href: "/dich-vu/tu-van-thiet-ke-thi-cong" },
-    { label: "Thiết bị ngân hàng", href: "/dich-vu/thiet-bi-ngan-hang" },
+  const hrefs = ["/", "/gioi-thieu", "/dich-vu", "/san-pham", "/du-an", "/tin-tuc", "/lien-he", "/bao-gia"];
+  const serviceHrefs = [
+    "/dich-vu/bao-tri-nang-cap-he-thong",
+    "/dich-vu/helpdesk-it-outsourcing",
+    "/dich-vu/giai-phap-camera-may-chu-luu-tru",
+    "/dich-vu/tu-van-thiet-ke-thi-cong",
+    "/dich-vu/thiet-bi-ngan-hang",
   ];
 
   return (
@@ -79,13 +69,10 @@ export default function Footer() {
           <div>
             <h3 className="font-bold text-base mb-4 text-white">{t.footer.quickLinks}</h3>
             <ul className="space-y-2">
-              {quickLinks.map((link) => (
-                <li key={link.href}>
-                  <Link
-                    href={link.href}
-                    className="text-white/70 hover:text-white text-sm transition-colors"
-                  >
-                    {link.label}
+              {t.footer.quickLinksItems.map((label, i) => (
+                <li key={hrefs[i]}>
+                  <Link href={hrefs[i]} className="text-white/70 hover:text-white text-sm transition-colors">
+                    {label}
                   </Link>
                 </li>
               ))}
@@ -94,15 +81,12 @@ export default function Footer() {
 
           {/* Services */}
           <div>
-            <h3 className="font-bold text-base mb-4 text-white">Dịch vụ</h3>
+            <h3 className="font-bold text-base mb-4 text-white">{t.footer.servicesLabel}</h3>
             <ul className="space-y-2">
-              {services.map((link) => (
-                <li key={link.href}>
-                  <Link
-                    href={link.href}
-                    className="text-white/70 hover:text-white text-sm transition-colors"
-                  >
-                    {link.label}
+              {t.footer.servicesItems.map((label, i) => (
+                <li key={serviceHrefs[i]}>
+                  <Link href={serviceHrefs[i]} className="text-white/70 hover:text-white text-sm transition-colors">
+                    {label}
                   </Link>
                 </li>
               ))}
@@ -119,20 +103,20 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href="tel:+842812345678"
+                  href="tel:+842862515094"
                   className="flex items-center gap-3 text-sm text-white/70 hover:text-white transition-colors"
                 >
                   <Phone className="w-4 h-4 text-accent flex-shrink-0" />
-                  +84 (28) 1234 5678
+                  028 6251 5094 – 091 970 4433
                 </a>
               </li>
               <li>
                 <a
-                  href="mailto:info@gvntmc.com"
+                  href="mailto:support@gvntmc.com"
                   className="flex items-center gap-3 text-sm text-white/70 hover:text-white transition-colors"
                 >
                   <Mail className="w-4 h-4 text-accent flex-shrink-0" />
-                  info@gvntmc.com
+                  support@gvntmc.com
                 </a>
               </li>
             </ul>
@@ -142,7 +126,7 @@ export default function Footer() {
               <p className="text-sm font-semibold text-white mb-2">{t.footer.newsletter.title}</p>
               {subscribed ? (
                 <p className="text-sm text-green-400 bg-green-400/10 px-3 py-2 rounded-xl">
-                  Cảm ơn bạn đã đăng ký!
+                  {t.footer.subscribeSuccess}
                 </p>
               ) : (
                 <form onSubmit={handleSubscribe} className="flex gap-2">
@@ -156,7 +140,7 @@ export default function Footer() {
                   <button
                     type="submit"
                     className="bg-accent hover:bg-accent-dark p-2 rounded-xl transition-colors flex-shrink-0"
-                    aria-label="Đăng ký"
+                    aria-label={t.footer.newsletter.button}
                   >
                     <Send className="w-4 h-4" />
                   </button>
@@ -173,10 +157,10 @@ export default function Footer() {
           <p className="text-white/50 text-sm">{t.footer.copyright}</p>
           <div className="flex items-center gap-4 text-sm">
             <Link href="#" className="text-white/50 hover:text-white/80 transition-colors">
-              Chính sách bảo mật
+              {t.footer.policyLinks.privacy}
             </Link>
             <Link href="#" className="text-white/50 hover:text-white/80 transition-colors">
-              Điều khoản sử dụng
+              {t.footer.policyLinks.terms}
             </Link>
           </div>
         </div>

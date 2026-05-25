@@ -24,6 +24,9 @@ interface Translations {
     stat1: { value: string; label: string };
     stat2: { value: string; label: string };
     stat3: { value: string; label: string };
+    floatingBadge1: string;
+    floatingBadge1Sub: string;
+    floatingBadge2Sub: string;
   };
   about: {
     badge: string;
@@ -63,22 +66,45 @@ interface Translations {
     badge: string;
     title: string;
     subtitle: string;
+    subtitleIntl: string;
+    statText: string;
+    categoryBank: string;
+    categoryIndustry: string;
+    categoryTech: string;
   };
   cta: {
     title: string;
     subtitle: string;
     button: string;
     contact: string;
+    trust1: string;
+    trust2: string;
+    trust3: string;
+  };
+  header: {
+    allProducts: string;
+    productCategories: {
+      storage: string;
+      camera: string;
+      network: string;
+      server: string;
+      ups: string;
+    };
   };
   footer: {
     tagline: string;
     newsletter: { title: string; placeholder: string; button: string };
     quickLinks: string;
+    quickLinksItems: string[];
+    servicesLabel: string;
+    servicesItems: string[];
     contact: string;
     address: string;
     phone: string;
     email: string;
     copyright: string;
+    subscribeSuccess: string;
+    policyLinks: { privacy: string; terms: string };
   };
   contact: {
     name: string;
@@ -89,6 +115,16 @@ interface Translations {
     send: string;
     sending: string;
     success: string;
+  };
+  intlStrip: {
+    badge1: string;
+    badge1Sub: string;
+    badge2: string;
+    badge2Sub: string;
+    badge3: string;
+    badge3Sub: string;
+    badge4: string;
+    badge4Sub: string;
   };
 }
 
@@ -113,6 +149,9 @@ const vi: Translations = {
     stat1: { value: "10+", label: "Năm kinh nghiệm" },
     stat2: { value: "200+", label: "Dự án hoàn thành" },
     stat3: { value: "50+", label: "Khách hàng tin tưởng" },
+    floatingBadge1: "200+ Dự án",
+    floatingBadge1Sub: "Hoàn thành thành công",
+    floatingBadge2Sub: "Đánh giá khách hàng",
   },
   about: {
     badge: "Về chúng tôi",
@@ -154,6 +193,11 @@ const vi: Translations = {
     badge: "Đối tác",
     title: "Đối tác & khách hàng tin tưởng",
     subtitle: "GVN tự hào là đối tác CNTT được tin tưởng bởi hàng chục tập đoàn lớn trong và ngoài nước.",
+    subtitleIntl: "Bao gồm 15+ tập đoàn Hàn Quốc đang hoạt động tại Việt Nam",
+    statText: "15 đối tác · 3 lĩnh vực · 10+ năm hợp tác",
+    categoryBank: "🏦 Ngân hàng Hàn Quốc",
+    categoryIndustry: "🏭 Tập đoàn công nghiệp",
+    categoryTech: "💻 Công nghệ",
   },
   cta: {
     title: "Sẵn sàng nâng cấp hạ tầng CNTT?",
@@ -161,6 +205,19 @@ const vi: Translations = {
       "Liên hệ với chúng tôi ngay hôm nay để được tư vấn miễn phí và nhận báo giá tốt nhất cho dự án của bạn.",
     button: "Nhận báo giá miễn phí",
     contact: "Gọi cho chúng tôi",
+    trust1: "Tư vấn miễn phí",
+    trust2: "Phản hồi trong 2 giờ",
+    trust3: "Không ràng buộc hợp đồng",
+  },
+  header: {
+    allProducts: "Tất cả sản phẩm →",
+    productCategories: {
+      storage: "Lưu trữ (SSD/HDD/NAS)",
+      camera: "Camera an ninh",
+      network: "Thiết bị mạng",
+      server: "Máy chủ",
+      ups: "UPS & Nguồn điện",
+    },
   },
   footer: {
     tagline: "Đối tác CNTT toàn diện – Giải pháp công nghệ cho doanh nghiệp.",
@@ -170,11 +227,31 @@ const vi: Translations = {
       button: "Đăng ký",
     },
     quickLinks: "Liên kết nhanh",
+    quickLinksItems: [
+      "Trang chủ",
+      "Giới thiệu",
+      "Dịch vụ",
+      "Sản phẩm",
+      "Dự án",
+      "Tin tức",
+      "Liên hệ",
+      "Báo giá",
+    ],
+    servicesLabel: "Dịch vụ",
+    servicesItems: [
+      "Bảo trì hệ thống CNTT",
+      "IT Outsourcing",
+      "Camera an ninh",
+      "Thi công hạ tầng",
+      "Thiết bị ngân hàng",
+    ],
     contact: "Liên hệ",
     address: "Địa chỉ",
     phone: "Điện thoại",
     email: "Email",
     copyright: "© 2024 GVNTMC. Bảo lưu mọi quyền.",
+    subscribeSuccess: "Cảm ơn bạn đã đăng ký!",
+    policyLinks: { privacy: "Chính sách bảo mật", terms: "Điều khoản sử dụng" },
   },
   contact: {
     name: "Họ và tên",
@@ -185,6 +262,16 @@ const vi: Translations = {
     send: "Gửi tin nhắn",
     sending: "Đang gửi...",
     success: "Tin nhắn của bạn đã được gửi thành công! Chúng tôi sẽ liên hệ lại sớm nhất.",
+  },
+  intlStrip: {
+    badge1: "Đối tác FDI Hàn Quốc",
+    badge1Sub: "Shinhan · Hyosung · LG · Doosan",
+    badge2: "Hỗ trợ song ngữ",
+    badge2Sub: "Tiếng Việt & Tiếng Anh",
+    badge3: "Bảo mật cấp ngân hàng",
+    badge3Sub: "Tuân thủ tiêu chuẩn quốc tế",
+    badge4: "Phản hồi 24/7",
+    badge4Sub: "Hỗ trợ kỹ thuật liên tục",
   },
 };
 
@@ -209,6 +296,9 @@ const en: Translations = {
     stat1: { value: "10+", label: "Years of Experience" },
     stat2: { value: "200+", label: "Projects Completed" },
     stat3: { value: "50+", label: "Trusted Clients" },
+    floatingBadge1: "200+ Projects",
+    floatingBadge1Sub: "Successfully Completed",
+    floatingBadge2Sub: "Client Rating",
   },
   about: {
     badge: "About Us",
@@ -250,6 +340,11 @@ const en: Translations = {
     badge: "Partners",
     title: "Trusted Partners & Clients",
     subtitle: "GVN is proud to be the trusted IT partner of dozens of major corporations.",
+    subtitleIntl: "Including 15+ Korean corporations operating in Vietnam",
+    statText: "15 partners · 3 sectors · 10+ years of partnership",
+    categoryBank: "🏦 Korean Banks",
+    categoryIndustry: "🏭 Korean Industry",
+    categoryTech: "💻 Technology",
   },
   cta: {
     title: "Ready to Upgrade Your IT Infrastructure?",
@@ -257,6 +352,19 @@ const en: Translations = {
       "Contact us today for a free consultation and the best quote for your project.",
     button: "Get a Free Quote",
     contact: "Call Us",
+    trust1: "Free Consultation",
+    trust2: "Response within 2 hours",
+    trust3: "No contract lock-in",
+  },
+  header: {
+    allProducts: "All Products →",
+    productCategories: {
+      storage: "Storage (SSD/HDD/NAS)",
+      camera: "Security Cameras",
+      network: "Network Equipment",
+      server: "Servers",
+      ups: "UPS & Power Supply",
+    },
   },
   footer: {
     tagline: "Comprehensive IT Partner – Technology solutions for businesses.",
@@ -266,11 +374,31 @@ const en: Translations = {
       button: "Subscribe",
     },
     quickLinks: "Quick Links",
+    quickLinksItems: [
+      "Home",
+      "About",
+      "Services",
+      "Products",
+      "Projects",
+      "News",
+      "Contact",
+      "Get a Quote",
+    ],
+    servicesLabel: "Services",
+    servicesItems: [
+      "IT System Maintenance",
+      "IT Outsourcing",
+      "Security Camera Systems",
+      "Infrastructure Installation",
+      "Banking Equipment",
+    ],
     contact: "Contact",
     address: "Address",
     phone: "Phone",
     email: "Email",
     copyright: "© 2024 GVNTMC. All rights reserved.",
+    subscribeSuccess: "Thank you for subscribing!",
+    policyLinks: { privacy: "Privacy Policy", terms: "Terms of Use" },
   },
   contact: {
     name: "Full Name",
@@ -281,6 +409,16 @@ const en: Translations = {
     send: "Send Message",
     sending: "Sending...",
     success: "Your message has been sent successfully! We will get back to you soon.",
+  },
+  intlStrip: {
+    badge1: "Korean FDI Partners",
+    badge1Sub: "Shinhan · Hyosung · LG · Doosan",
+    badge2: "Bilingual Support",
+    badge2Sub: "Vietnamese & English",
+    badge3: "Banking-Grade Security",
+    badge3Sub: "International standards compliance",
+    badge4: "24/7 Response",
+    badge4Sub: "Continuous technical support",
   },
 };
 

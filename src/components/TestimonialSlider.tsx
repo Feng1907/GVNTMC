@@ -13,7 +13,7 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 
 export default function TestimonialSlider() {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
 
   return (
     <section className="section-padding bg-gradient-primary relative overflow-hidden">
@@ -85,7 +85,7 @@ export default function TestimonialSlider() {
 
                   {/* Quote text */}
                   <blockquote className="text-white/85 leading-relaxed mb-8 italic">
-                    &ldquo;{testimonial.quote}&rdquo;
+                    &ldquo;{language === "en" && testimonial.quoteEn ? testimonial.quoteEn : testimonial.quote}&rdquo;
                   </blockquote>
 
                   {/* Author */}

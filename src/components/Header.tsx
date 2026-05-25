@@ -19,16 +19,16 @@ import { useLanguage } from "@/context/LanguageContext";
 import SearchModal from "./SearchModal";
 import clsx from "clsx";
 
-const productDropdownItems = [
-  { icon: HardDrive, label: "Lưu trữ (SSD/HDD/NAS)", href: "/san-pham?category=Lưu trữ" },
-  { icon: Camera, label: "Camera an ninh", href: "/san-pham?category=Camera an ninh" },
-  { icon: Wifi, label: "Thiết bị mạng", href: "/san-pham?category=Thiết bị mạng" },
-  { icon: Server, label: "Máy chủ", href: "/san-pham?category=Máy chủ" },
-  { icon: Battery, label: "UPS & Nguồn điện", href: "/san-pham?category=UPS & Nguồn" },
-];
-
 export default function Header() {
   const { language, setLanguage, t } = useLanguage();
+
+  const productDropdownItems = [
+    { icon: HardDrive, label: t.header.productCategories.storage, href: "/san-pham?category=Lưu trữ" },
+    { icon: Camera, label: t.header.productCategories.camera, href: "/san-pham?category=Camera an ninh" },
+    { icon: Wifi, label: t.header.productCategories.network, href: "/san-pham?category=Thiết bị mạng" },
+    { icon: Server, label: t.header.productCategories.server, href: "/san-pham?category=Máy chủ" },
+    { icon: Battery, label: t.header.productCategories.ups, href: "/san-pham?category=UPS & Nguồn" },
+  ];
   const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -142,7 +142,7 @@ export default function Header() {
                           className="flex items-center gap-3 px-3 py-2 rounded-xl hover:bg-primary-50 text-sm font-semibold text-primary mb-1"
                           onClick={() => setProductDropOpen(false)}
                         >
-                          Tất cả sản phẩm →
+                          {t.header.allProducts}
                         </Link>
                         <div className="h-px bg-gray-100 mb-1" />
                         {productDropdownItems.map((item) => (

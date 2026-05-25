@@ -5,6 +5,7 @@ import { LanguageProvider } from "@/context/LanguageContext";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import FloatingButtons from "@/components/FloatingButtons";
+import HtmlLangSync from "@/components/HtmlLangSync";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -72,6 +73,7 @@ export default function RootLayout({
     <html lang="vi" className={inter.variable}>
       <body className="bg-white">
         <LanguageProvider>
+          <HtmlLangSync />
           <Header />
           <main>{children}</main>
           <Footer />

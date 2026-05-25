@@ -241,8 +241,8 @@ export default function HeroSection() {
                 </svg>
               </div>
               <div>
-                <p className="font-bold text-text-primary text-sm">200+ Dự án</p>
-                <p className="text-xs text-text-secondary">Hoàn thành thành công</p>
+                <p className="font-bold text-text-primary text-sm">{t.hero.floatingBadge1}</p>
+                <p className="text-xs text-text-secondary">{t.hero.floatingBadge1Sub}</p>
               </div>
             </motion.div>
 
@@ -259,7 +259,20 @@ export default function HeroSection() {
                 ))}
               </div>
               <p className="font-bold text-text-primary text-sm">4.9/5</p>
-              <p className="text-xs text-text-secondary">Đánh giá khách hàng</p>
+              <p className="text-xs text-text-secondary">{t.hero.floatingBadge2Sub}</p>
+            </motion.div>
+
+            {/* Korean FDI badge */}
+            <motion.div
+              animate={{ y: [0, -5, 0] }}
+              transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+              className="absolute top-1/2 -translate-y-1/2 -right-2 bg-white rounded-[16px] shadow-[0_6px_24px_rgba(27,79,191,0.15)] px-3 py-2.5 items-center gap-2.5 hidden xl:flex"
+            >
+              <span className="text-xl leading-none">🇰🇷</span>
+              <div>
+                <p className="font-bold text-text-primary text-xs leading-tight">Korean FDI Partners</p>
+                <p className="text-[10px] text-text-secondary leading-tight mt-0.5">Shinhan · Hyosung · LG</p>
+              </div>
             </motion.div>
           </motion.div>
         </div>

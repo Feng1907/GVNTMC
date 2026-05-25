@@ -86,11 +86,7 @@ export default function CTASection() {
                 transition={{ delay: 0.3 }}
                 className="flex flex-wrap items-center gap-6 mt-8 pt-8 border-t border-white/15"
               >
-                {[
-                  "Tư vấn miễn phí",
-                  "Phản hồi trong 2 giờ",
-                  "Không ràng buộc hợp đồng",
-                ].map((item) => (
+                {[t.cta.trust1, t.cta.trust2, t.cta.trust3].map((item) => (
                   <span key={item} className="inline-flex items-center gap-1.5 bg-white/10 rounded-full px-3 py-1 text-white/80 text-sm font-medium">
                     <CheckCircle2 className="w-4 h-4 text-green-400 flex-shrink-0" />
                     {item}

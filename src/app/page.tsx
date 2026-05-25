@@ -6,6 +6,7 @@ import AboutPreview from "@/components/AboutPreview";
 import FeaturedProjects from "@/components/FeaturedProjects";
 import TestimonialSlider from "@/components/TestimonialSlider";
 import PartnersGrid from "@/components/PartnersGrid";
+import InternationalBadgeStrip from "@/components/InternationalBadgeStrip";
 import CTASection from "@/components/CTASection";
 
 export const metadata: Metadata = {
@@ -30,6 +31,7 @@ export default function HomePage() {
       <FeaturedProjects />
       <TestimonialSlider />
       <PartnersGrid />
+      <InternationalBadgeStrip />
       <CTASection />
     </>
   );
