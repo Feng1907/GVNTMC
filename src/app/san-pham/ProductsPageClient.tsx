@@ -1,157 +1,205 @@
 "use client";
 
-import { useState, useMemo } from "react";
-import { motion } from "framer-motion";
-import Image from "next/image";
-import Link from "next/link";
-import { Search, Tag, Filter, ArrowRight } from "lucide-react";
-import { products, productCategories } from "@/data/products";
-import clsx from "clsx";
+import { useState, useMemo, useCallback } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { PackageSearch } from "lucide-react";
+import { products, Product } from "@/data/products";
+import ProductSidebar from "@/components/products/ProductSidebar";
+import ProductToolbar from "@/components/products/ProductToolbar";
+import ProductCard from "@/components/products/ProductCard";
+import QuickViewModal from "@/components/products/QuickViewModal";
+import ProductPagination from "@/components/products/ProductPagination";
+import ProductCTASection from "@/components/products/ProductCTASection";
+import ProductBreadcrumb from "@/components/products/ProductBreadcrumb";
+
+const PER_PAGE = 9;
+type SortOption = "default" | "name-asc" | "name-desc" | "newest";
 
 export default function ProductsPageClient() {
   const [activeCategory, setActiveCategory] = useState("Tất cả");
   const [searchQuery, setSearchQuery] = useState("");
+  const [sort, setSort] = useState<SortOption>("default");
+  const [page, setPage] = useState(1);
+  const [quickViewProduct, setQuickViewProduct] = useState<Product | null>(null);
+  const [sidebarOpen, setSidebarOpen] = useState(false);
 
+  const handleCategoryChange = useCallback((cat: string) => {
+    setActiveCategory(cat);
+    setPage(1);
+  }, []);
+
+  const handleSearchChange = useCallback((q: string) => {
+    setSearchQuery(q);
+    setPage(1);
+  }, []);
+
+  const handleSortChange = useCallback((s: SortOption) => {
+    setSort(s);
+    setPage(1);
+  }, []);
+
+  // Filter
   const filtered = useMemo(() => {
-    return products.filter((p) => {
-      const matchCat = activeCategory === "Tất cả" || p.category === activeCategory;
+    let list = products.filter((p) => {
+      const matchCat =
+        activeCategory === "Tất cả" ||
+        p.category === activeCategory ||
+        p.categoryGroup === activeCategory;
+      const q = searchQuery.toLowerCase();
       const matchSearch =
-        !searchQuery ||
-        p.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        p.brand.toLowerCase().includes(searchQuery.toLowerCase());
+        !q ||
+        p.name.toLowerCase().includes(q) ||
+        p.brand.toLowerCase().includes(q) ||
+        p.category.toLowerCase().includes(q) ||
+        p.tags.some((t) => t.toLowerCase().includes(q));
       return matchCat && matchSearch;
     });
-  }, [activeCategory, searchQuery]);
+
+    // Sort
+    switch (sort) {
+      case "name-asc":
+        list = [...list].sort((a, b) => a.name.localeCompare(b.name, "vi"));
+        break;
+      case "name-desc":
+        list = [...list].sort((a, b) => b.name.localeCompare(a.name, "vi"));
+        break;
+      case "newest":
+        list = [...list].sort((a, b) => Number(b.id) - Number(a.id));
+        break;
+    }
+
+    return list;
+  }, [activeCategory, searchQuery, sort]);
+
+  const totalPages = Math.ceil(filtered.length / PER_PAGE);
+  const paginated = filtered.slice((page - 1) * PER_PAGE, page * PER_PAGE);
 
   return (
     <>
-      {/* Hero */}
-      <section className="bg-gradient-hero text-white pt-32 pb-16">
+      {/* Breadcrumb */}
+      <div className="pt-16">
+        <ProductBreadcrumb crumbs={[{ label: "Sản phẩm" }]} />
+      </div>
+
+      {/* Page header */}
+      <section className="bg-gradient-to-b from-[#EBF0FB] to-neutral-light py-8 md:py-10">
         <div className="container-custom">
-          <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} className="max-w-2xl">
-            <div className="badge bg-white/10 border border-white/20 text-white mb-6">Sản phẩm</div>
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">
-              Thiết bị CNTT<br /><span className="text-accent">chính hãng</span>
-            </h1>
-            <p className="text-white/75 text-xl leading-relaxed">
-              Phân phối chính hãng thiết bị CNTT từ các thương hiệu hàng đầu thế giới với giá cạnh tranh.
-            </p>
-          </motion.div>
+          <h1 className="text-3xl md:text-4xl font-bold text-text-primary">Sản phẩm</h1>
+          <p className="text-text-secondary mt-2">
+            Thiết bị CNTT, linh kiện, UPS, thiết bị ngân hàng và phần mềm doanh nghiệp chính hãng.
+          </p>
         </div>
       </section>
 
-      {/* Filter bar */}
-      <section className="bg-white border-b border-neutral-border sticky top-16 z-30 shadow-sm">
-        <div className="container-custom py-4">
-          <div className="flex flex-col md:flex-row gap-4 items-center">
-            {/* Search */}
-            <div className="relative flex-1 w-full md:max-w-xs">
-              <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-text-light" />
-              <input
-                type="text"
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-                placeholder="Tìm kiếm sản phẩm..."
-                className="input-field pl-9 py-2 text-sm"
+      {/* Mobile sidebar drawer */}
+      <AnimatePresence>
+        {sidebarOpen && (
+          <>
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={() => setSidebarOpen(false)}
+              className="fixed inset-0 bg-black/40 z-40 lg:hidden"
+            />
+            <motion.div
+              initial={{ x: "-100%" }}
+              animate={{ x: 0 }}
+              exit={{ x: "-100%" }}
+              transition={{ duration: 0.28, ease: [0.22, 1, 0.36, 1] }}
+              className="fixed inset-y-0 left-0 w-80 z-50 overflow-y-auto lg:hidden"
+            >
+              <ProductSidebar
+                activeCategory={activeCategory}
+                searchQuery={searchQuery}
+                onCategoryChange={handleCategoryChange}
+                onSearchChange={handleSearchChange}
+                onClose={() => setSidebarOpen(false)}
+                isMobile
+              />
+            </motion.div>
+          </>
+        )}
+      </AnimatePresence>
+
+      {/* Main content */}
+      <section className="section-padding bg-neutral-light">
+        <div className="container-custom">
+          <div className="flex gap-7 items-start">
+            {/* Desktop sidebar */}
+            <div className="hidden lg:block w-64 flex-shrink-0 sticky top-24">
+              <ProductSidebar
+                activeCategory={activeCategory}
+                searchQuery={searchQuery}
+                onCategoryChange={handleCategoryChange}
+                onSearchChange={handleSearchChange}
               />
             </div>
 
-            {/* Category filters */}
-            <div className="flex items-center gap-2 flex-wrap">
-              <Filter className="w-4 h-4 text-text-secondary flex-shrink-0" />
-              {productCategories.map((cat) => (
-                <button
-                  key={cat}
-                  onClick={() => setActiveCategory(cat)}
-                  className={clsx(
-                    "px-3 py-1.5 rounded-xl text-sm font-medium transition-all duration-200",
-                    activeCategory === cat
-                      ? "bg-primary text-white shadow-sm"
-                      : "bg-gray-100 text-text-secondary hover:bg-gray-200"
-                  )}
-                >
-                  {cat}
-                </button>
-              ))}
+            {/* Right — grid */}
+            <div className="flex-1 min-w-0">
+              <ProductToolbar
+                total={filtered.length}
+                page={page}
+                perPage={PER_PAGE}
+                sort={sort}
+                onSortChange={handleSortChange}
+                onOpenFilter={() => setSidebarOpen(true)}
+              />
+
+              {paginated.length === 0 ? (
+                <div className="text-center py-24 bg-white rounded-2xl border border-neutral-border">
+                  <PackageSearch className="w-16 h-16 text-gray-200 mx-auto mb-4" />
+                  <p className="text-text-primary font-semibold text-lg mb-2">
+                    Không tìm thấy sản phẩm phù hợp
+                  </p>
+                  <p className="text-text-secondary text-sm mb-6">
+                    Thử thay đổi từ khóa hoặc danh mục tìm kiếm.
+                  </p>
+                  <button
+                    onClick={() => {
+                      handleCategoryChange("Tất cả");
+                      handleSearchChange("");
+                    }}
+                    className="btn-primary"
+                  >
+                    Xóa bộ lọc
+                  </button>
+                </div>
+              ) : (
+                <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-5">
+                  {paginated.map((product, i) => (
+                    <ProductCard
+                      key={product.id}
+                      product={product}
+                      index={i}
+                      onQuickView={setQuickViewProduct}
+                    />
+                  ))}
+                </div>
+              )}
+
+              {/* Pagination */}
+              <ProductPagination
+                currentPage={page}
+                totalPages={totalPages}
+                onPageChange={(p) => {
+                  setPage(p);
+                  window.scrollTo({ top: 0, behavior: "smooth" });
+                }}
+              />
             </div>
           </div>
         </div>
       </section>
 
-      {/* Products grid */}
-      <section className="section-padding bg-neutral-light">
-        <div className="container-custom">
-          <p className="text-sm text-text-secondary mb-6">
-            Hiển thị <strong>{filtered.length}</strong> sản phẩm
-            {activeCategory !== "Tất cả" && ` trong danh mục "${activeCategory}"`}
-          </p>
+      <ProductCTASection />
 
-          {filtered.length === 0 ? (
-            <div className="text-center py-20">
-              <Search className="w-16 h-16 text-gray-200 mx-auto mb-4" />
-              <p className="text-text-secondary text-lg">Không tìm thấy sản phẩm phù hợp</p>
-              <button onClick={() => { setSearchQuery(""); setActiveCategory("Tất cả"); }} className="mt-4 btn-primary">
-                Xóa bộ lọc
-              </button>
-            </div>
-          ) : (
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-              {filtered.map((product, i) => (
-                <motion.div
-                  key={product.id}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: i * 0.05 }}
-                >
-                  <div className="card group h-full flex flex-col border border-transparent hover:border-primary/10">
-                    {/* Image */}
-                    <div className="relative aspect-[4/3] overflow-hidden bg-gray-50">
-                      <Image
-                        src={product.image}
-                        alt={product.name}
-                        fill
-                        className="object-cover group-hover:scale-105 transition-transform duration-500"
-                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-                      />
-                      {product.featured && (
-                        <div className="absolute top-2 left-2 bg-accent text-white text-xs font-bold px-2 py-0.5 rounded-lg">
-                          Nổi bật
-                        </div>
-                      )}
-                    </div>
-
-                    {/* Content */}
-                    <div className="p-5 flex flex-col flex-1">
-                      <div className="flex items-center gap-2 mb-2">
-                        <span className="text-xs font-semibold text-primary bg-primary-50 px-2 py-0.5 rounded-lg">{product.brand}</span>
-                        <span className="text-xs text-text-secondary">{product.category}</span>
-                      </div>
-
-                      <h3 className="font-bold text-text-primary text-sm leading-snug mb-3 line-clamp-2 group-hover:text-primary transition-colors">
-                        {product.name}
-                      </h3>
-                      <p className="text-xs text-text-secondary line-clamp-2 mb-4 flex-1">{product.shortDesc}</p>
-
-                      <div className="flex items-center justify-between mt-auto pt-3 border-t border-neutral-border">
-                        <div className="flex items-center gap-1 text-accent font-bold text-sm">
-                          <Tag className="w-3.5 h-3.5" />
-                          {product.price}
-                        </div>
-                        <Link
-                          href={`/san-pham/${product.slug}`}
-                          className="text-xs font-semibold text-primary hover:text-primary-700 flex items-center gap-1 transition-colors"
-                        >
-                          Chi tiết <ArrowRight className="w-3 h-3" />
-                        </Link>
-                      </div>
-                    </div>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-          )}
-        </div>
-      </section>
+      {/* Quick View Modal */}
+      <QuickViewModal
+        product={quickViewProduct}
+        onClose={() => setQuickViewProduct(null)}
+      />
     </>
   );
 }

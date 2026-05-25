@@ -123,7 +123,7 @@ export default function ProductCarousel() {
                     <div className="flex items-center justify-between mt-auto">
                       <div className="flex items-center gap-1 text-accent font-semibold text-sm">
                         <Tag className="w-3.5 h-3.5" />
-                        {product.price}
+                        Liên hệ
                       </div>
                       <Link
                         href={`/san-pham/${product.slug}`}
